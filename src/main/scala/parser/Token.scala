@@ -1,4 +1,4 @@
-package Formula.Token
+package Formula.Parser.Token
 
 /* Used to store location of an token */
 case class TokenLocation(var line: Int = 1, var column: Int = 0):

@@ -1,4 +1,4 @@
-package Formula.Formula
+package Formula.Parser.Formula
 
 import scala.util.matching.Regex
 

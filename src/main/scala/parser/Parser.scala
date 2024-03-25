@@ -1,9 +1,9 @@
-package Formula.Parser
+package Formula.Parser.Parser
 
 import scala.collection.mutable.ListBuffer
 import scala.language.dynamics
-import Formula.Token.*
-import Formula.Formula.*
+import Formula.Parser.Token.*
+import Formula.Parser.Formula.*
 
 case class FormulaParseException(message: String) extends Exception(message)
 class ParserProvided extends Dynamic

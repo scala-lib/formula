@@ -1,8 +1,8 @@
-package Formula.Extension
+package Formula.Parser.Extension
 
-import Formula.Lexer.*
-import Formula.Parser.*
-import Formula.Formula.*
+import Formula.Parser.Lexer.*
+import Formula.Parser.Parser.*
+import Formula.Parser.Formula.*
 
 implicit class FormulaHelper(private val sc: StringContext) extends AnyVal {
 	def formula(args: Any*): Formula = 

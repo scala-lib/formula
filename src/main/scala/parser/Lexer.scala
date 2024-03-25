@@ -1,8 +1,8 @@
-package Formula.Lexer
+package Formula.Parser.Lexer
 
 import scala.collection.mutable.ListBuffer
 import scala.util.matching.Regex
-import Formula.Token.*
+import Formula.Parser.Token.*
 
 case class FormulaLexException(message: String) extends Exception(message)
 

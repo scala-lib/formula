@@ -1,13 +1,13 @@
-import Formula.Extension.*
+import Formula.Lib.Syntax.*
 
 @main def main(): Unit =
-  val frml = formula"""
-    define SOME group ! {
-      match LETTER;
-      match DIGIT;
-    }
+	// Example: {JdXgi}, {NpxTNxhueDy}
+	val formula = expect.fromStartToEnd {
+		expect.safe('{')
+			+ capture(
+				expect.some { expect.letter }
+			)
+		+ expect.safe('}')
+	}
 
-    match SOME
-  """
-
-  println(frml.value)
+	println((formula.r, formula.matches("{JdXgi}")))
