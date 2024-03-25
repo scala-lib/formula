@@ -2,12 +2,30 @@
 
 Regex runtime alternative for Scala.
 
-## Usage
+## Usage (Syntax)
 
-You can write formula directly in your code:
+You can use special simple & readable syntax to construct Regexes:
 
 ```scala
-import Formula.Extension.*
+import Formula.Lib.Syntax.*
+
+val frml = expect.fromStartToEnd {
+	expect.safe('{')
+		+ capture(
+			expect.some { expect.letter }
+		)
+	+ expect.safe('}')
+}
+
+println(frml.r) // ^\{([a-zA-Z]+)\}$
+```
+
+## Usage (Parser)
+
+You can write formula language directly in your code:
+
+```scala
+import Formula.Parser.Extension.*
 
 val frml = formula"""
 define HEX_3 group {
@@ -23,6 +41,8 @@ match HEX_3 | HEX_6
 
 println(frml.value) // #([a-zA-Z]{3})|([a-zA-Z]{6})
 ```
+
+Formula language code will be lexed, parsed and serialized into Regex.
 
 ## Changelog
 
